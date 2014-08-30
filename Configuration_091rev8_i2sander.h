@@ -78,7 +78,7 @@
 #define EXT0_PID_P 7
 #define EXT0_PID_I 2
 #define EXT0_PID_D 40
-#define EXT0_PID_MAX 255
+#define EXT0_PID_MAX 180
 #define EXT0_ADVANCE_K 0
 #define EXT0_ADVANCE_L 0
 #define EXT0_ADVANCE_BACKLASH_STEPS 0
@@ -95,7 +95,7 @@
 #define TEMP_HYSTERESIS 0
 #define EXTRUDE_MAXLENGTH 160
 #define NUM_TEMPS_USERTHERMISTOR0 23
-#define USER_THERMISTORTABLE0 {{222,1920},{261,1840},{308,1760},{365,1680},{434,1600},{518,1520},{620,1440},{744,1360},{891,1280},{1066,1200},{1272,1120},{1507,1040},{1771,960},{2057,880},{2356,800},{2656,720},{2942,640},{3203,560},{3428,480},{3614,400},{3759,320},{3868,240},{3947,160}}
+#define USER_THERMISTORTABLE0 {{107,1920},{127,1840},{151,1760},{180,1680},{216,1600},{261,1520},{317,1440},{387,1360},{473,1280},{581,1200},{715,1120},{880,1040},{1080,960},{1318,880},{1593,800},{1902,720},{2233,640},{2571,560},{2896,480},{3190,400},{3441,320},{3641,240},{3793,160}}
 #define NUM_TEMPS_USERTHERMISTOR1 0
 #define USER_THERMISTORTABLE1 {}
 #define NUM_TEMPS_USERTHERMISTOR2 0
@@ -108,7 +108,7 @@
 
 #define HAVE_HEATED_BED 1
 #define HEATED_BED_MAX_TEMP 120
-#define SKIP_M190_IF_WITHIN 3
+#define SKIP_M190_IF_WITHIN 5
 #define HEATED_BED_SENSOR_TYPE 5
 #define HEATED_BED_SENSOR_PIN TEMP_1_PIN
 #define HEATED_BED_HEATER_PIN HEATER_1_PIN
@@ -120,10 +120,10 @@
 #define HEATED_BED_PID_IGAIN   33
 #define HEATED_BED_PID_DGAIN 290
 #define HEATED_BED_PID_MAX 255
-#define MIN_EXTRUDER_TEMP 80
+#define MIN_EXTRUDER_TEMP 120
 #define MAXTEMP 200
 #define MIN_DEFECT_TEMPERATURE 10
-#define MAX_DEFECT_TEMPERATURE 290
+#define MAX_DEFECT_TEMPERATURE 250
 
 // ################ Endstop configuration #####################
 
@@ -179,8 +179,8 @@
 #define X_HOME_DIR -1
 #define Y_HOME_DIR -1
 #define Z_HOME_DIR -1
-#define X_MAX_LENGTH 180
-#define Y_MAX_LENGTH 180
+#define X_MAX_LENGTH 165
+#define Y_MAX_LENGTH 165
 #define Z_MAX_LENGTH 100
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
@@ -201,7 +201,7 @@
 
 #define MAX_DELTA_SEGMENTS_PER_LINE 24
 #define STEPPER_INACTIVE_TIME 360L
-#define MAX_INACTIVE_TIME 120L
+#define MAX_INACTIVE_TIME 360L
 #define MAX_FEEDRATE_X 200
 #define MAX_FEEDRATE_Y 200
 #define MAX_FEEDRATE_Z 2
@@ -250,7 +250,7 @@
 #define BAUDRATE 115200
 #define ENABLE_POWER_ON_STARTUP
 #define POWER_INVERTING 0
-#define KILL_METHOD 1
+#define KILL_METHOD 0
 #define GCODE_BUFFER_SIZE 2
 #define ACK_WITH_LINENUMBER
 #define WAITING_IDENTIFIER "wait"
@@ -368,7 +368,7 @@ Values must be in range 1..255
             "heatManager": 0,
             "pidDriveMin": 40,
             "pidDriveMax": 230,
-            "pidMax": 255,
+            "pidMax": 180,
             "sensorType": 5,
             "sensorPin": "TEMP_0_PIN",
             "heaterPin": "HEATER_0_PIN",
@@ -449,12 +449,12 @@ Values must be in range 1..255
     "backlashY": 0,
     "backlashZ": 0,
     "stepperInactiveTime": 360,
-    "maxInactiveTime": 120,
+    "maxInactiveTime": 360,
     "xMinPos": 0,
     "yMinPos": 0,
     "zMinPos": 0,
-    "xLength": 180,
-    "yLength": 180,
+    "xLength": 165,
+    "yLength": 165,
     "zLength": 100,
     "alwaysCheckEndstops": "1",
     "disableX": "0",
@@ -499,7 +499,7 @@ Values must be in range 1..255
     "echoOnExecute": "1",
     "sendWaits": "1",
     "ackWithLineNumber": "1",
-    "killMethod": 1,
+    "killMethod": 0,
     "useAdvance": "0",
     "useQuadraticAdvance": "0",
     "powerInverting": 0,
@@ -574,7 +574,7 @@ Values must be in range 1..255
     "bedPidMax": 255,
     "caseLightPin": -1,
     "caseLightDefaultOn": "1",
-    "bedSkipIfWithin": 3,
+    "bedSkipIfWithin": 5,
     "gen1T0": 30,
     "gen1R0": 85000,
     "gen1Beta": 4036,
@@ -598,122 +598,122 @@ Values must be in range 1..255
     "gen3R2": 4700,
     "userTable0": {
         "r1": 0,
-        "r2": 4700,
+        "r2": 10000,
         "temps": [
             {
                 "t": 240,
                 "r": 269,
-                "adc": 221.68544978869
+                "adc": 107.26993865031
             },
             {
                 "t": 230,
                 "r": 319.5,
-                "adc": 260.65394959657
+                "adc": 126.78448568245
             },
             {
                 "t": 220,
                 "r": 382,
-                "adc": 307.80991735537
+                "adc": 150.6732806781
             },
             {
                 "t": 210,
                 "r": 459.9,
-                "adc": 364.985852439
+                "adc": 180.04861423149
             },
             {
                 "t": 200,
                 "r": 557,
-                "adc": 433.88149134487
+                "adc": 216.05711849957
             },
             {
                 "t": 190,
                 "r": 681,
-                "adc": 518.24846682773
+                "adc": 261.08931747964
             },
             {
                 "t": 180,
                 "r": 839,
-                "adc": 620.27532045496
+                "adc": 316.97619706615
             },
             {
                 "t": 170,
                 "r": 1043,
-                "adc": 743.70276858785
+                "adc": 386.76854115729
             },
             {
                 "t": 160,
                 "r": 1307,
-                "adc": 890.98801398369
+                "adc": 473.34969487928
             },
             {
                 "t": 150,
                 "r": 1655,
-                "adc": 1066.4398111723
+                "adc": 581.48648648649
             },
             {
                 "t": 140,
                 "r": 2117,
-                "adc": 1271.6906263752
+                "adc": 715.45060658579
             },
             {
                 "t": 130,
                 "r": 2737,
-                "adc": 1507.0613150464
+                "adc": 879.95721127424
             },
             {
                 "t": 120,
                 "r": 3581,
-                "adc": 1770.8241758242
+                "adc": 1079.7581179589
             },
             {
                 "t": 110,
                 "r": 4744,
-                "adc": 2057.0393900889
+                "adc": 1317.5990233315
             },
             {
                 "t": 100,
                 "r": 6369,
-                "adc": 2356.2250429126
+                "adc": 1593.3199951127
             },
             {
                 "t": 90,
                 "r": 8674,
-                "adc": 2655.9017496635
+                "adc": 1902.1114919139
             },
             {
                 "t": 80,
                 "r": 11998,
-                "adc": 2942.376931369
+                "adc": 2233.4671333758
             },
             {
                 "t": 70,
                 "r": 16874,
-                "adc": 3202.8844905905
+                "adc": 2571.222371065
             },
             {
                 "t": 60,
                 "r": 24161,
-                "adc": 3428.1312151346
+                "adc": 2896.2645999824
             },
             {
                 "t": 50,
                 "r": 35272,
-                "adc": 3613.5004503152
+                "adc": 3190.4673970666
             },
             {
                 "t": 40,
                 "r": 52589,
-                "adc": 3759.045453752
+                "adc": 3440.7316780904
             },
             {
                 "t": 30,
                 "r": 80223,
-                "adc": 3868.3652838454
+                "adc": 3641.1246023741
             },
             {
                 "t": 20,
                 "r": 125470,
-                "adc": 3947.1433510025
+                "adc": 3792.7190521887
             }
         ],
         "numEntries": 23
@@ -736,10 +736,10 @@ Values must be in range 1..255
     "pidControlRange": 20,
     "skipM109Within": 2,
     "extruderFanCoolTemp": 50,
-    "minTemp": 80,
+    "minTemp": 120,
     "maxTemp": 200,
     "minDefectTemp": 10,
-    "maxDefectTemp": 290,
+    "maxDefectTemp": 250,
     "arcSupport": "1",
     "featureMemoryPositionWatchdog": "1",
     "forceChecksum": "0",
